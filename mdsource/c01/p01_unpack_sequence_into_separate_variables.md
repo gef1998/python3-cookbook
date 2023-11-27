@@ -6,40 +6,40 @@
 唯一的要求是，变量的总数和结构必须与序列保持一致。
 **代码示例：**
 ```python
->>> p = (4, 5)
->>> x, y = p
->>> x
-4
->>> y
-5
->>>
->>> data = [ 'ACME', 50, 91.1, (2012, 12, 21) ]
->>> name, shares, price, date = data
->>> name
-'ACME'
->>> date
-(2012, 12, 21)
->>> name, shares, price, (year, mon, day) = data
->>> name
-'ACME'
->>> year
-2012
->>> mon
-12
->>> day
-21
->>>
+    >>> p = (4, 5)
+    >>> x, y = p
+    >>> x
+    4
+    >>> y
+    5
+    >>>
+    >>> data = [ 'ACME', 50, 91.1, (2012, 12, 21) ]
+    >>> name, shares, price, date = data
+    >>> name
+    'ACME'
+    >>> date
+    (2012, 12, 21)
+    >>> name, shares, price, (year, mon, day) = data
+    >>> name
+    'ACME'
+    >>> year
+    2012
+    >>> mon
+    12
+    >>> day
+    21
+    >>>
 
 ```
 如果元素的数量不匹配，会得到一个错误提示。
 **代码示例：**
 ```python
->>> p = (4, 5)
->>> x, y, z = p
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-ValueError: need more than 2 values to unpack
->>>
+    >>> p = (4, 5)
+    >>> x, y, z = p
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    ValueError: need more than 2 values to unpack
+    >>>
 
 ```
 ### 讨论 ###
@@ -47,28 +47,28 @@ ValueError: need more than 2 values to unpack
 包括字符串，文件对象，迭代器和生成器。
 **代码示例：**
 ```python
->>> s = 'Hello'
->>> a, b, c, d, e = s
->>> a
-'H'
->>> b
-'e'
->>> e
-'o'
->>>
+    >>> s = 'Hello'
+    >>> a, b, c, d, e = s
+    >>> a
+    'H'
+    >>> b
+    'e'
+    >>> e
+    'o'
+    >>>
 
 ```
 有时候，你可能只想解压其中的一部分而丢弃其他的值。对于这种情况 Python 并没有提供特殊的语法。
 但是你可以使用任意变量名去占位，到时候丢掉这些变量就行了。
 **代码示例：**
 ```python
->>> data = [ 'ACME', 50, 91.1, (2012, 12, 21) ]
->>> _, shares, price, _ = data
->>> shares
-50
->>> price
-91.1
->>>
+    >>> data = [ 'ACME', 50, 91.1, (2012, 12, 21) ]
+    >>> _, shares, price, _ = data
+    >>> shares
+    50
+    >>> price
+    91.1
+    >>>
 
 ```
 但是，你必须保证你选用的那些占位变量名在其他地方没被使用到。
